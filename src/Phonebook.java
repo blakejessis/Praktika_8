@@ -31,14 +31,14 @@ public class Phonebook {
                     String numberPhone = scanner.nextLine();
                     String name = buffer;
                     if (isNumberPhoneCorrect(numberPhone)) {
-                        numberPhone = changeNumberToNiceForm(numberPhone);
+                        numberPhone = changeNumber(numberPhone);
                         phonesMap.put(numberPhone, name);
                         System.out.println("Номер добавлен\n");
                     }
                 }
             }else if (isNumberPhoneCorrect(buffer)) {
                 String numberPhone = buffer;
-                numberPhone = changeNumberToNiceForm(numberPhone);
+                numberPhone = changeNumber(numberPhone);
                 if (phonesMap.containsKey(numberPhone)) {
                     for (Map.Entry<String, String> entry : phonesMap.entrySet()) {
                         if (entry.getKey().equals(numberPhone)) {
@@ -57,7 +57,7 @@ public class Phonebook {
         }
     }
 
-    private static String changeNumberToNiceForm(String phone) {
+    private static String changeNumber(String phone) {
         phone = phone.replaceAll("[^0-9]", "");
         StringBuffer result = new StringBuffer();
         if (phone.charAt(0) == '7' && phone.length() == 11) {
