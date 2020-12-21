@@ -8,7 +8,6 @@ public class Todolist {
 
 
         Scanner scanner = new Scanner(System.in);
-
         while(true) {
             String[] t = scanner.nextLine().split("\\s+", 3);
             switch (t[0]) {
@@ -65,7 +64,5 @@ public class Todolist {
                 }
             }
         }
-
-
     }
 }
